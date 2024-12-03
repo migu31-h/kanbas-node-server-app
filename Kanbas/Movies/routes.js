@@ -3,7 +3,7 @@ import * as modulesDao from "../Modules/dao.js";
 import * as assignmentsDao from "../Assignments/dao.js";
 
 
-export default function CourseRoutes(app) {
+export default function MoviesRoutes(app) {
 
     const findUsersForCourse = async (req, res) => {
       const { cid } = req.params;
@@ -67,8 +67,8 @@ export default function CourseRoutes(app) {
 
   });
     
-  app.get("/api/courses", async (req, res) => {
-    const courses = await dao.findAllCourses();
+  app.get("/api/movies", async (req, res) => {
+    const courses = await dao.findAllMovies();
     res.send(courses);
   });
 }
