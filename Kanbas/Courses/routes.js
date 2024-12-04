@@ -31,7 +31,7 @@ export default function CourseRoutes(app) {
     
 
 
-    app.post("/api/courses/:courseId/modules", async (req, res) => {
+    app.post("/api/movies/:courseId/modules", async (req, res) => {
         const { courseId } = req.params;
         const module = {
           ...req.body,
@@ -41,7 +41,7 @@ export default function CourseRoutes(app) {
         res.send(newModule);
       });
     
-      app.get("/api/courses/:courseId/modules", async (req, res) => {
+      app.get("/api/movies/:courseId/modules", async (req, res) => {
         const { courseId } = req.params;
         const modules = await modulesDao.findModulesForCourse(courseId);
         res.json(modules);
